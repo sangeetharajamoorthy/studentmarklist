@@ -3,6 +3,7 @@ from typing import List, Dict, Optional
 import json
 from fastapi.middleware.cors import CORSMiddleware
 import random
+
 app = FastAPI()
 
 try:
@@ -63,7 +64,7 @@ async def get_marks(names: Optional[List[str]] = Query(None)):
     if not_found:
         raise HTTPException(status_code=404, detail=f"Students not found: {', '.join(not_found)}")
 
-     return  marks
+    return {"marks": marks}
 
 
 # For running locally:
