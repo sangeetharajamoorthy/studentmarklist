@@ -7,7 +7,7 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"]) # Allow GET requests fro
 # Or, provide more granular control:
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://example.com"],  # Allow a specific domain
+    allow_origins=["https://vercel.com"],  # Allow a specific domain
     allow_credentials=True,  # Allow cookies
     allow_methods=["GET", "POST", "PUT", "DELETE"],  # Allow specific methods
     allow_headers=["*"],  # Allow all headers
