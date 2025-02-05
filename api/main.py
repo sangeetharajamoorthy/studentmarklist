@@ -16,6 +16,10 @@ except FileNotFoundError:
         student_marks[student_name] = random.randint(0, 100)
     with open("student_marks.json", "w") as f: # Save dummy data
         json.dump(student_marks, f, indent=4) # Save with indentation for readability
+# Print the student list from the loaded JSON
+print("Student List:")
+for student, mark in student_marks.items():
+    print(f"{student}: {mark}")
 
 import random # Import random *after* potentially generating dummy data
 
