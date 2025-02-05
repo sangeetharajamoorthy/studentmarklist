@@ -3,7 +3,6 @@ from typing import List, Dict, Optional
 import json
 from fastapi.middleware.cors import CORSMiddleware
 import random
-
 app = FastAPI()
 
 try:
