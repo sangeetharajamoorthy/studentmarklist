@@ -49,14 +49,14 @@ async def get_marks(names: Optional[List[str]] = Query(None)):
     if names is None or not names:
         raise HTTPException(status_code=400, detail="Please provide at least one name in the 'names' query parameter.")
 
-    found_marks = {}
+    marks =[]
     not_found = []
 
     for name in names:
         print(f"Checking for name: {name}") # Check the name before the if statement
         if name in student_marks:
             print(f"Found {name}") # print if name was found
-            found_marks[name] = student_marks[name]
+            marks.append(student_marks[name])
         else:
             print(f"Not found {name}") # print if name was not found
             not_found.append(name)
@@ -64,7 +64,7 @@ async def get_marks(names: Optional[List[str]] = Query(None)):
     if not_found:
         raise HTTPException(status_code=404, detail=f"Students not found: {', '.join(not_found)}")
 
-    return {"marks": found_marks}
+    return  marks
 
 
 # For running locally:
