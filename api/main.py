@@ -64,7 +64,7 @@ async def get_marks(names: Optional[List[str]] = Query(None)):
     if not_found:
         raise HTTPException(status_code=404, detail=f"Students not found: {', '.join(not_found)}")
 
-    return {"marks": marks}
+    return marks
 
 
 # For running locally:
