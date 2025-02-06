@@ -43,7 +43,7 @@ async def get_all_students():
 
 
 @app.get("/api")
-async def get_marks(names: Optional[List[str]] = Query(None)):
+async def get_marks(names: Optional[List[str]] = Query(None,,alias= "name")):
     print("Received names:", names) # print the names parameter
 
     if names is None or not names:
